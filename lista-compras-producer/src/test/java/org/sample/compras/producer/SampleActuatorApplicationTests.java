@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-package org.sample.compras.producer
-
--compras.actuator.log4j;
+package org.sample.compras.producer;
 
 import java.util.Map;
 
