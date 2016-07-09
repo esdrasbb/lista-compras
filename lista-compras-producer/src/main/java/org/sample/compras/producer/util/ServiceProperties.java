@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2013 the original author or authors.
+ * Copyright 2012-2014 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,19 +14,23 @@
  * limitations under the License.
  */
 
-package org.sample.compras.producer;
+package org.sample.compras.producer.util;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+@ConfigurationProperties(prefix = "service", ignoreUnknownFields = false)
 @Component
-public class HelloWorldService {
+public class ServiceProperties {
 
-	@Autowired
-	private ServiceProperties configuration;
+    private String name = "World";
 
-	public String getHelloMessage() {
-		return "Hello " + this.configuration.getName();
-	}
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
 }

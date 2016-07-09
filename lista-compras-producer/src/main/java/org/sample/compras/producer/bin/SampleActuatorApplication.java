@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.sample.compras.producer;
+package org.sample.compras.producer.bin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -25,11 +25,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableAutoConfiguration
 @EnableConfigurationProperties
-@ComponentScan
+@ComponentScan("org.sample.compras")
 public class SampleActuatorApplication {
 
-	public static void main(String[] args) throws Exception {
-		SpringApplication.run(SampleActuatorApplication.class, args);
-	}
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(SampleActuatorApplication.class, args);
+    }
 
 }

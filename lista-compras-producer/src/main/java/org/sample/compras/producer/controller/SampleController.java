@@ -14,32 +14,33 @@
  * limitations under the License.
  */
 
-package org.sample.compras.producer;
+package org.sample.compras.producer.controller;
+
+import org.sample.compras.producer.service.HelloWorldService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collections;
 import java.util.Map;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
-@Controller
+@RestController
 public class SampleController {
 
-	@Autowired
-	private HelloWorldService helloWorldService;
+    @Autowired
+    private HelloWorldService helloWorldService;
 
-	@RequestMapping("/")
-	@ResponseBody
-	public Map<String, String> helloWorld() {
-		return Collections.singletonMap("message",
-				this.helloWorldService.getHelloMessage());
-	}
+    @RequestMapping("/")
+    @ResponseBody
+    public Map<String, String> helloWorld() {
+        return Collections.singletonMap("message",
+                this.helloWorldService.getHelloMessage());
+    }
 
-	@RequestMapping("/foo")
-	@ResponseBody
-	public String foo() {
-		throw new IllegalArgumentException("Server error");
-	}
+    @RequestMapping("/foo")
+    @ResponseBody
+    public String foo() {
+        throw new IllegalArgumentException("Server error");
+    }
 }

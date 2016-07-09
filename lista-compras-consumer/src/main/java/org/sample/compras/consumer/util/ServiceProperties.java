@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.sample.compras.producer;
+package org.sample.compras.consumer.util;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -23,14 +23,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class ServiceProperties {
 
-	private String name = "World";
+    private String name = "World";
 
-	public String getName() {
-		return this.name;
-	}
+    public String getName() {
+        return this.name;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
 }

@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-package org.sample.compras.consumer;
+package org.sample.compras.consumer.service;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
+import org.sample.compras.consumer.util.ServiceProperties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-@Configuration
-@EnableAutoConfiguration
-@EnableConfigurationProperties
-@ComponentScan
-public class SampleActuatorApplication {
+@Component
+public class HelloWorldService {
 
-	public static void main(String[] args) throws Exception {
-		SpringApplication.run(SampleActuatorApplication.class, args);
-	}
+    @Autowired
+    private ServiceProperties configuration;
+
+    public String getHelloMessage() {
+        return "Hello " + this.configuration.getName();
+    }
 
 }
