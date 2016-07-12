@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration>
+<configuration debug="true">
 
     <property name="DEV_HOME" value="lista-compras-producer/logs"/>
 
@@ -53,14 +53,7 @@
 
     </appender>
 
-    <!-- Send logs to both console and file audit -->
-    <logger name="org.sample.compras" level="info"
-            additivity="false">
-        <appender-ref ref="FILE-AUDIT"/>
-        <appender-ref ref="STDOUT"/>
-    </logger>
-
-    <root level="error">
+    <root level="info">
         <appender-ref ref="FILE-ERROR"/>
         <appender-ref ref="STDOUT"/>
     </root>

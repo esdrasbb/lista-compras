@@ -13,6 +13,6 @@ public class MQRoute extends RouteBuilder {
     public void configure() throws Exception {
         from("timer:hello?period={{timer.period}}")
                 .transform(method("item", "saySomething"))
-                .to("stream:out");
+                .log("Received message [${body}]");;
     }
 }
