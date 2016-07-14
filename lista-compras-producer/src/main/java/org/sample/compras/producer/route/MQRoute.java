@@ -6,13 +6,17 @@ import org.springframework.stereotype.Component;
 /**
  * Created by esdrasbb on 08/07/16.
  */
-@Component
+//@Component
 public class MQRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from("timer:hello?period={{timer.period}}")
-                .transform(method("item", "saySomething"))
-                .log("Received message [${body}]");;
+
+
+
+
+//        from("timer:hello?period={{timer.period}}")
+//                .transform(method("item", "saySomething"))
+//                .log("Received message [${body}]");;
     }
 }

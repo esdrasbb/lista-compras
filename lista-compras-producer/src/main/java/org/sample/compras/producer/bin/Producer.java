@@ -26,10 +26,10 @@ import org.springframework.context.annotation.Configuration;
 @EnableAutoConfiguration
 @EnableConfigurationProperties
 @ComponentScan("org.sample.compras")
-public class SampleActuatorApplication {
+public class Producer {
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(SampleActuatorApplication.class, args);
+        SpringApplication.run(Producer.class, args);
     }
 
 }

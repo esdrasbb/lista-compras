@@ -10,4 +10,4 @@ hs_err_pid*
 *.iml
 .idea
 
-*/logs
+/lista-compras-producer/logs/*

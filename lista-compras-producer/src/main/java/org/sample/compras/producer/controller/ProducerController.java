@@ -16,31 +16,33 @@
 
 package org.sample.compras.producer.controller;
 
-import org.sample.compras.producer.service.HelloWorldService;
+import org.sample.compras.producer.model.Item;
+import org.sample.compras.producer.service.JmsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Collections;
-import java.util.Map;
-
 @RestController
-public class SampleController {
+public class ProducerController {
 
     @Autowired
-    private HelloWorldService helloWorldService;
+    private JmsService jmsService;
 
     @RequestMapping("/")
     @ResponseBody
-    public Map<String, String> helloWorld() {
-        return Collections.singletonMap("message",
-                this.helloWorldService.getHelloMessage());
+    public String sayHi() {
+        return "is alive!";
     }
 
-    @RequestMapping("/foo")
+    @RequestMapping("/add")
     @ResponseBody
-    public String foo() {
-        throw new IllegalArgumentException("Server error");
+    public String addItem(@RequestParam(value = "id", required = true) final Long id,
+                          @RequestParam(value = "name", required = true) final String name,
+                          @RequestParam(value = "quantidade", required = true) final Integer quantidade) {
+        jmsService.adicionaItem(new Item(id, name, quantidade));
+        return "OK";
     }
+
 }
