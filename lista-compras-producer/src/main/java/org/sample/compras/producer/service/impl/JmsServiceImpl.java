@@ -5,12 +5,12 @@ import org.sample.compras.producer.service.JmsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jms.core.JmsTemplate;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 /**
  * Created by esdrasbb on 13/07/16.
  */
-@Service
+@Component
 public class JmsServiceImpl implements JmsService {
 
     @Value("${queue.name}")

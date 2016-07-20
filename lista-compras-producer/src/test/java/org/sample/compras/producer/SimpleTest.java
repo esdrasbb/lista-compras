@@ -18,7 +18,7 @@ public class SimpleTest{
 
     @Test
     public void sendItem(){
-        jmsService.adicionaItem(new Item(1L, "Test", 1));
+        jmsService.adicionaItem(new Item(1L, 1));
     }
 
 }

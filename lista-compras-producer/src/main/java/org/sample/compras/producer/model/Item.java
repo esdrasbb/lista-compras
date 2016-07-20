@@ -10,25 +10,19 @@ import java.io.Serializable;
 public class Item implements Serializable {
 
     private Long id;
-    private String nome;
-    private Integer quantidade;
+    private Integer amount;
 
-    public Item(Long id, String nome, Integer quantidade) {
+    public Item(Long id, Integer amount) {
         this.id = id;
-        this.nome = nome;
-        this.quantidade = quantidade;
+        this.amount = amount;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public Integer getQuantidade() {
-        return quantidade;
+    public Integer getAmount() {
+        return amount;
     }
 
     @Override
