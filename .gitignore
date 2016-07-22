@@ -10,6 +10,6 @@ hs_err_pid*
 *.iml
 .idea
 
-/lista-compras-producer/logs/*
-/lista-compras-consumer/logs/*
+lista-compras-consumer/logs/*
+lista-compras-producer/logs/*
 target/
