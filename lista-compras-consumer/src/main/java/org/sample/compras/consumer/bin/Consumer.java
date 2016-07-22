@@ -14,20 +14,22 @@
  * limitations under the License.
  */
 
-package org.sample.compras.consumer.service;
+package org.sample.compras.consumer.bin;
 
-import org.sample.compras.consumer.util.ServiceProperties;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-@Component
-public class HelloWorldService {
+@Configuration
+@EnableAutoConfiguration
+@EnableConfigurationProperties
+@ComponentScan("org.sample.compras")
+public class Consumer {
 
-    @Autowired
-    private ServiceProperties configuration;
-
-    public String getHelloMessage() {
-        return "Hello " + this.configuration.getName();
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(Consumer.class, args);
     }
 
 }

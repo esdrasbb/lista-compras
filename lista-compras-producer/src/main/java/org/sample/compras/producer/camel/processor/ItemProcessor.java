@@ -3,7 +3,7 @@ package org.sample.compras.producer.camel.processor;
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 import org.apache.commons.lang3.Validate;
-import org.sample.compras.producer.model.Item;
+import org.sample.compras.commons.model.Item;
 import org.sample.compras.producer.util.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

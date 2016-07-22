@@ -1,6 +1,6 @@
 package org.sample.compras.producer.service;
 
-import org.sample.compras.producer.model.Item;
+import org.sample.compras.commons.model.Item;
 
 /**
  * Created by esdrasbb on 13/07/16.

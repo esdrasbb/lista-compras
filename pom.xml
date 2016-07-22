@@ -17,8 +17,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>lista-compras-consumer</module>
+        <module>lista-compras-commons</module>
         <module>lista-compras-producer</module>
+        <module>lista-compras-consumer</module>
     </modules>
 
     <properties>

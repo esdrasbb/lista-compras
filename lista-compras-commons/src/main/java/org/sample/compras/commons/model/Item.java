@@ -1,4 +1,4 @@
-package org.sample.compras.producer.model;
+package org.sample.compras.commons.model;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 

@@ -9,22 +9,14 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.sample.compras.consumer</groupId>
-    <artifactId>lista-compras-consumer</artifactId>
-    <name>Lista Compras Consumer</name>
+    <groupId>org.sample.compras.commons</groupId>
+    <artifactId>lista-compras-commons</artifactId>
+    <name>Lista Compras Commons</name>
     <version>0.1-SNAPSHOT</version>
 
     <properties>
         <java.version>1.8</java.version>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.sample.compras.commons</groupId>
-            <artifactId>lista-compras-commons</artifactId>
-            <version>0.1-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 
     <build>
         <plugins>
@@ -35,3 +27,4 @@
         </plugins>
     </build>
 </project>
+

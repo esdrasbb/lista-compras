@@ -1,6 +1,6 @@
 package org.sample.compras.producer.service.impl;
 
-import org.sample.compras.producer.model.Item;
+import org.sample.compras.commons.model.Item;
 import org.sample.compras.producer.service.JmsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
