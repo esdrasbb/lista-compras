@@ -37,6 +37,7 @@ public class ControllerRoute extends RouteBuilder {
                 .log(LoggingLevel.INFO, CAMEL_LOGGER, "Received message [${body}]")
                 .to("sql:insert into item (id, amount) values (:#id, :#amount)?dataSourceRef=dataSource")
                 .to("sql:select * from item?dataSourceRef=dataSource")
+                .split(body())
                 .process(new Processor() {
                     public void process(Exchange exchange)
                             throws Exception {

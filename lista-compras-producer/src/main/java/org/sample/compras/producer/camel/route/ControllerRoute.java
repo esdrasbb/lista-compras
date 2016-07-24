@@ -42,9 +42,9 @@ public class ControllerRoute extends RouteBuilder {
                 .get("/add/{id}/{amount}").produces("text/html").to("direct:add");
 
         from("direct:add")
+                .log(LoggingLevel.INFO, CAMEL_LOGGER, "Received request - id:[$simple{in.header.id}] amount:[$simple{in.header.amount}]")
                 .process(itemProcessor)
-                .log(LoggingLevel.INFO, CAMEL_LOGGER, "Received message [${body}]")
-                .inOnly("activemq:queue:" + constants.getQueueName())
+                //.inOnly("activemq:queue:" + constants.getQueueName())
                 .transform().constant("item added").end();
     }
 }

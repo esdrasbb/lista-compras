@@ -2,11 +2,15 @@ package org.sample.compras.producer.camel.processor;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
+import org.apache.camel.ProducerTemplate;
 import org.apache.commons.lang3.Validate;
 import org.sample.compras.commons.model.Item;
 import org.sample.compras.producer.util.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by esdrasbb on 19/07/16.
@@ -24,7 +28,14 @@ public class ItemProcessor implements Processor {
 
         validate(id, amount);
 
-        exchange.getIn().setBody(new Item(Long.valueOf(id), Integer.valueOf(amount)));
+        Item item = new Item(Long.valueOf(id), Integer.valueOf(amount));
+        Map<String, Object> map = new HashMap<>();
+        map.put("id", id);
+        map.put("amount", amount);
+        ProducerTemplate template = exchange.getContext().createProducerTemplate();
+        template.sendBodyAndHeaders("activemq:queue:" + constants.getQueueName(), item, map);
+
+        exchange.getIn().setBody(item);
     }
 
     private void validate(String id, String amount) {
